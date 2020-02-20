@@ -2,7 +2,7 @@
 echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 
 # Go To .git root directory
-cd ~/workspace/yumaloop.github.io
+cd ~/workspace/efrat19.github.io
 
 # Add all changes to git.
 git add .

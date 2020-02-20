@@ -13,7 +13,7 @@ tags:
 
 In this post, I describe the setup procedure of this blog site.
 
-This site is developed with Jekyll, a static site generator and hosted by Github pages. All contents of the site are registered in [Github public repository](https://github.com/yumaloop/yumaloop.github.io) and you can browse any source code in it.
+This site is developed with Jekyll, a static site generator and hosted by Github pages. All contents of the site are registered in [Github public repository](https://github.com/efrat19/efrat19.github.io) and you can browse any source code in it.
 
 
 
@@ -120,14 +120,14 @@ Then please run the following as your bash command which automatically convert y
 
 ```
 $ bundle exec jekyll serve
-Configuration file: /Users/uchiumi/workspace/yumaloop.github.io/_config.yml
-            Source: /Users/uchiumi/workspace/yumaloop.github.io
-       Destination: /Users/uchiumi/workspace/yumaloop.github.io/_site
+Configuration file: /Users/uchiumi/workspace/efrat19.github.io/_config.yml
+            Source: /Users/uchiumi/workspace/efrat19.github.io
+       Destination: /Users/uchiumi/workspace/efrat19.github.io/_site
  Incremental build: disabled. Enable with --incremental
       Generating... 
        Jekyll Feed: Generating feed for posts
                     done in 0.353 seconds.
- Auto-regeneration: enabled for '/Users/uchiumi/workspace/yumaloop.github.io'
+ Auto-regeneration: enabled for '/Users/uchiumi/workspace/efrat19.github.io'
     Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
@@ -180,7 +180,7 @@ $ bundle exec jekyll serve
 $ git init
 $ git add .
 $ git commit -m "update"
-$ git remote add origin https://github.com/yumaloop/yumaloop.github.io.git
+$ git remote add origin https://github.com/efrat19/efrat19.github.io.git
 $ git push origin master 
 ```
 
