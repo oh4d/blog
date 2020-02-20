@@ -1,18 +1,18 @@
-title: Yuma Uchiumi
+title: Efrat Levitan
 description: >
-  Yuma Uchiumi's Blog site 
+  Efrat Levitan's Blog site 
 baseurl: ""
 url: "http://efrat19.github.io"
 
 author:
-  name: Yuma Uchiumi
-  email: yumaloop@gmail.com
-  github: yumaloop
-  twitter: yumaloop
+  name: Efrat Levitan
+  email: efrat890089@gmail.com
+  github: efrat19
+  twitter: EfratLevitan
+  linkedin: efrat-levitan-773402177
+  disqus_shortname: https-efrat19-github-io
   facebook: yumauchiumi
   instagram: uchiumiyuma
-  linkedin: yuma-uchiumi-699398151
-  disqus_shortname: https-yumaloop-github-io
 
 paginate: 5
 paginate_path: page:num
