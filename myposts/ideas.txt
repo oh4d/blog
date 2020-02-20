@@ -1,0 +1,43 @@
+CI:
+- CircleCI vs GitLabCI
+- CircleCI scheduling a build...........
+- GitLabCI scheduling a build...........
+- drone.io simple workflow..............
+- GitHub Actions simple workflow
+- CircleCI promote to production
+- mirroring GitHub from GitLabCI
+- npm private registry
+
+Docker:
+- running supervisor
+- build args vs env - deep dive
+- installing xdebug
+
+k8s:
+- creating canary area cookie vs header
+- hpa
+- rpi cluster............................
+- installing prometheus + node exporter
+- rabbitmq exporter
+- kube-probe auth for htpasswd...........
+- federation
+- vim plugins
+- managing secrets ......................
+- externlaDNs
+- hpa custom metrics
+- efs
+
+aws:
+- eksctl
+- cluster autoscaler
+- efs
+- log cloudwatch https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-EKS.html
+- hpa custom https://docs.okd.io/latest/rest_api/apis-autoscaling/v2beta1.HorizontalPodAutoscaler.html
+
+
+
+
+
+
+
+
