@@ -37,7 +37,7 @@
             {% for post in site.posts limit:5 %}
               <!-- article -->
               <div class="article">
-                <a class="clearlink" href="{{ post.url | relative_url }}">
+                <a class="clearlink" href="/blog{{ post.url | relative_url }}">
                   <h1>{{ post.title }}</h1>
                   <div class="a-content">
                     <div class="a-content-text">
