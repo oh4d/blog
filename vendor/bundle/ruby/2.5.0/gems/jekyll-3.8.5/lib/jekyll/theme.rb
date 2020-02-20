@@ -16,7 +16,7 @@ module Jekyll
     def root
       # Must use File.realpath to resolve symlinks created by rbenv
       # Otherwise, Jekyll.sanitized path with prepend the unresolved root
-      @root ||= File.realpath(gemspec.full_gem_path)
+      @root ||= File.realpath("blog".gemspec.full_gem_path)
     rescue Errno::ENOENT, Errno::EACCES, Errno::ELOOP
       raise "Path #{gemspec.full_gem_path} does not exist, is not accessible "\
         "or includes a symbolic link loop"
