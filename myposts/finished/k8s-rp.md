@@ -1,10 +1,10 @@
-# Running kubernetes on Raspberry-pi
+# Running Hybrid kubernetes cluster on Raspberry-pi and Ubuntu Servers
 
 In this post I will document the steps for running my self-hosted kubernetes cluster.
 
 ## 1. firmware
 My cluster is made of 2 RaspberryPi 4X4, 1 Raspberry 3B+, and 1 old lenovo PC running Ubuntu16.
-you will need a microSD card, a power cable and an ethernet cable for each node
+you also need a microSD card, a power cable and an ethernet cable for each rpi node
 
 ## 2. Burn images to SD cards:
 
@@ -59,7 +59,7 @@ repeat that part for each of your SD cards.
 
 `sudo apt install vim`
 
-and than paste a script I copies from [here](https://kubecloud.io/setting-up-a-kubernetes-1-11-raspberry-pi-cluster-using-kubeadm-952bbda329c8):
+and than paste a script I copied from [here](https://kubecloud.io/setting-up-a-kubernetes-1-11-raspberry-pi-cluster-using-kubeadm-952bbda329c8):
 ```bash
 #!/bin/sh
 
@@ -93,6 +93,7 @@ setting ssh connection for each node:
 
 `ssh-copy-id pi@k8s-master.local` 
 `ssh-copy-id pi@k8s-worker-1.local` 
+`ssh-copy-id pi@k8s-worker-2.local` 
 
 and creating and inventory file:
 my cluster is made of 1 ubuntu old lappy, 2 rpi4 and 1 rpi3,
@@ -151,13 +152,54 @@ k8s-worker-2.local | SUCCESS => {
     "ping": "pong"
 }
 ```
-## 4. Kubernetes pre-configurations
+## 4. Installation
 
 I actually copied lots of staff from [this repo](https://github.com/mrlesmithjr/ansible-rpi-k8s-cluster)
 
 All you have to do is to adjust the scripts to your own needs.
 
-mine is [here](githubansible)
+mine is [here](githubansible), you can `git clone` it and than run it with `ansible-playbook -i hosts intallation.yaml`
 
+## 5. Init the master:
 
+ssh into your master node, and run:
+`kubeadm config images pull`
+`kubeadm init`
+after a couple of minutes, you will see the output telling you to copy the config file to your home dir. follow the instaructions and then run:
+
+```bash
+~ $ kubectl get nodes
+NAME                STATUS   ROLES    AGE   VERSION
+k8s-master          Ready    master   1h   v1.17.3
+```
+now type 
+
+`kubeadm token create --print-join-command`
+
+and tou will get output like:
+`kubeadm join 192.168.1.100:6443 --token xxxxxxxxxxxxxxx     --discovery-token-ca-cert-hash sha256:xxxxxxxxxxxxxxxx `
+
+copy the command and run it on your worker nodes. (you will probably have to use `sudo` previliges)
+
+now, once you go again to the control plain you can type:
+```bash
+~ $ kubectl get nodes
+NAME                STATUS   ROLES    AGE   VERSION
+efrat-lenovo-g550   Ready    <none>   34h   v1.16.3
+k8s-master          Ready    master   34h   v1.17.3
+k8s-worker-1        Ready    <none>   34h   v1.17.3
+k8s-worker-2        Ready    <none>   34h   v1.17.3
+```
+
+## 6. apply a cni:
+
+I use weave cause its multi-arch and will fit my hybrid cluster:
+
+`kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"`
+
+## 7. Untaint the master node, otherwise it wont run any regular pods:
+
+`kubectl taint nodes --all node-role.kubernetes.io/master-`
+
+Done! 
 

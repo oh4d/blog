@@ -26,6 +26,7 @@ k8s:
 - externlaDNs
 - hpa custom metrics
 - efs
+- helm 2 to 3
 
 aws:
 - eksctl
