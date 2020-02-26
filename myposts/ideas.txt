@@ -27,6 +27,9 @@ k8s:
 - hpa custom metrics
 - efs
 - helm 2 to 3
+- mongodb import-export
+- iam trust relationsships
+
 
 aws:
 - eksctl
@@ -35,10 +38,8 @@ aws:
 - log cloudwatch https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-EKS.html
 - hpa custom https://docs.okd.io/latest/rest_api/apis-autoscaling/v2beta1.HorizontalPodAutoscaler.html
 
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories
+RUN apk add mongodb-tools
 
 
-
-
-
-
-
+mongoimport --db admin --authenticationDatabase admin --username master --password abcd1234? --file /mongo/yad2_lead_fields.json --collection admin --host y2-dev-incubator2.cbjyhy8qtvcd.eu-west-1.docdb.amazonaws.com:27017  --ssl --sslCAFile rds-combined-ca-bundle.pem --sslAllowInvalidCertificates
