@@ -28,14 +28,12 @@ k8s:
 - efs
 - helm 2 to 3
 - mongodb import-export
-- iam trust relationsships
 
 
 aws:
 - eksctl
 - cluster autoscaler
 - efs
-- log cloudwatch https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/deploy-container-insights-EKS.html
 - hpa custom https://docs.okd.io/latest/rest_api/apis-autoscaling/v2beta1.HorizontalPodAutoscaler.html
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories
