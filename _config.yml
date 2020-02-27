@@ -1,11 +1,11 @@
-title: Yuma Uchiumi
+title: Efrat Levitan
 description: >
-  Yuma Uchiumi's Blog site 
-baseurl: ""
+  Efrat Levitan's Blog site 
+baseurl: "/blog"
 url: "http://yumaloop.github.io"
 
 author:
-  name: Yuma Uchiumi
+  name: Efrat Levitan
   email: yumaloop@gmail.com
   github: yumaloop
   twitter: yumaloop
