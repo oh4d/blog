@@ -1,4 +1,17 @@
-# Running Hybrid kubernetes cluster on Raspberry-pi and Ubuntu Servers
+---
+layout: post
+title: Running a Hybrid kubernetes cluster on Raspberry-pi and Ubuntu Servers
+lang: en
+categories:
+    - Kubernetes
+    - ansible
+    - kubeadm
+    - RaspberryPI
+    - Ubuntu
+tags:
+    - hoge
+    - foo
+---
 
 In this post I will document the steps for running my self-hosted kubernetes cluster.
 

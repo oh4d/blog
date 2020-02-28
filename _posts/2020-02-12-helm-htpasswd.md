@@ -1,4 +1,18 @@
-# kube-probe basic auth
+---
+layout: post
+title: kube-probe Basic Auth 
+lang: en
+categories:
+    - Kubernetes
+    - helm
+    - httpd
+    - kube-probe
+tags:
+    - hoge
+    - foo
+---
+
+# 
 
 In this post I will demonstrate authorazing k8s probes, using helm templates. This authentication is usefull for many auth-requiring services, but here I will focus on my specific use case on a legacy httpd server image.
 

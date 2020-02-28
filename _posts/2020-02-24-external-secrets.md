@@ -1,4 +1,16 @@
-# Kubernetes secrets management 
+---
+layout: post
+title: Kubernetes Secrets Management 
+lang: en
+categories:
+    - Kubernetes
+    - CRD
+    - AWS
+    - EKS
+tags:
+    - hoge
+    - foo
+---
 
 In this post I will go through the traditional secrets management and than cover some sick new CRDs I work with, designed for GitOps cluster management.
 
