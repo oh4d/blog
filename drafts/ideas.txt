@@ -16,13 +16,10 @@ Docker:
 k8s:
 - creating canary area cookie vs header
 - hpa
-- rpi cluster............................
 - installing prometheus + node exporter
 - rabbitmq exporter
-- kube-probe auth for htpasswd...........
 - federation
 - vim plugins
-- managing secrets ......................
 - externlaDNs
 - hpa custom metrics
 - efs
@@ -33,7 +30,6 @@ k8s:
 aws:
 - eksctl
 - cluster autoscaler
-- efs
 - hpa custom https://docs.okd.io/latest/rest_api/apis-autoscaling/v2beta1.HorizontalPodAutoscaler.html
 
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.9/community' >> /etc/apk/repositories
