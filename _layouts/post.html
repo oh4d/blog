@@ -41,7 +41,9 @@
                   <span class="date"><time>{{ page.date | date: '%B %d, %Y' }}</time></span>
                   <span>posted-in:&nbsp;</span> 
                   <span class="posted-in">
-                    <a href="{{ "/categories" | absolute_url }}#{{ page.categories }}">{{ page.categories }}</a>
+                  {% for category in page.categories %}
+                    <a href="{{ "/categories" | absolute_url }}#{{ category }}">{{ category }}</a> &nbsp;
+                  {% endfor %}
                   </span>
                   <span class="comments">
                     <a href="{{ post.url | relative_url }}#disqus_thread">comments</a>
@@ -72,7 +74,8 @@
             </div>
             {% endif %}           
 
-            {% include disqus.html %}
+           <!--  include disqus.html %} --> 
+            <!--   twitter https://twitter.com/EfratLevitan maxwidth=500 limit=5 %} -->
 
           </div>
         </div>

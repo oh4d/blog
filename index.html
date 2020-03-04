@@ -53,8 +53,10 @@
                   <div class="more-left left">
                     <a href="{{ post.url | relative_url }}">Read more</a>&nbsp;&nbsp; 
                     <span class="date"><time>{{ post.date | date: '%B %d, %Y' }}</time></span>
-                    <span>category:&nbsp;</span> 
-                    <span class="posted-in"><a href="{{ "/categories/" | absolute_url}}#{{ post.categories }}">{{ post.categories }}</a>
+                    <span>categories:&nbsp;</span>
+                    {% for category in post.categories %}
+                    <span class="posted-in"><a href="{{ "/categories/" | absolute_url}}#{{ category }}">{{ category }}</a> &nbsp;
+                  {% endfor %}
                     </span>
                   </div>
                   <div class="more-right right"> 
