@@ -34,7 +34,7 @@
         <div class="large-8 medium-8 columns">
           <div class="markdown-body home-categories">
 
-            {% for post in site.posts limit:5 %}
+            {% for post in paginator.posts %}
               <!-- article -->
               <div class="article">
                 <a class="clearlink" href="{{ post.url | relative_url }}">
@@ -81,7 +81,7 @@
                 -->
                 <div class="large-6 columns">
                   {% if paginator.next_page %}
-                  <p class="text-right" style="padding-top:25px;"> <a href="{{ paginator.next_page_path | relative_url }}">Next Page {{paginator}}</a> </p>
+                  <p class="text-right" style="padding-top:25px;"> <a href="{{ paginator.next_page_path | relative_url }}">Next Page</a> </p>
                   {% endif %}
                 </div>
               </div>

@@ -13,7 +13,7 @@ author:
   disqus_shortname: https-efrat19-github-io
   bio: DevOps, Cloud, Linux machines
 
-paginate: 3
+paginate: 5
 paginate_path: /posts/page:num
 
 sass:
