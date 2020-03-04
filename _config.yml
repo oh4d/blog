@@ -14,7 +14,7 @@ author:
   bio: DevOps, Cloud, Linux machines
 
 paginate: 3
-paginate_path: page:num
+paginate_path: /posts/page:num
 
 sass:
   style: expanded
@@ -22,3 +22,4 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-feed
+  - jemoji

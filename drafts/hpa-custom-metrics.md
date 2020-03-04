@@ -21,5 +21,5 @@ gist-----------------
 install it with `kubectl apply -f gist-----------------`
 
 
-
+https://github.com/stefanprodan/k8s-prom-hpa
 

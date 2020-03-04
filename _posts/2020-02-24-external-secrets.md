@@ -83,4 +83,8 @@ once such an ExternalSecret is deployed, the ExternalSecrets controller will be 
 - Pricing - external service as has its own costs you should consider.
 
 Right now I use ExternalSecrets and am very happy with the choice. I believe you should try all of this solutions and see what best suits you. 
+
+
+<!-- https://github.com/mozilla/sops -->
+
 gluck!
