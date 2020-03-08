@@ -13,7 +13,7 @@ categories:
 ---
  
 
-In this post I will demonstrate authorazing k8s probes, using helm templates. This authentication is usefull for many auth-requiring services, but here I will focus on my specific use case on a legacy httpd server image.
+In this post I will demonstrate authorizing k8s probes, using helm templates. This authentication is useful for many auth-requiring services, but here I will focus on my specific use case on a legacy httpd server image.
 
 Do any of you ever heard about `.htpasswd` file? I did not, until the day I had to migrate old httpd server to kubernetes. FYI, back in the old days people used to lock server routes with this file
 on the `.htaccess` file you would declare:
@@ -28,7 +28,7 @@ AuthType Basic
 ```
 and than you would have to supply credentials to access the routes. 
 
-OTOH k8s provides health chaecks - to keep an eye on the pod liveness and readiness, k8s probes it on a configurable time interval and according to the returned HTTP status, it will make a descision if to pass traffic to the pod or not, and weathre it should be restarted.
+OTOH k8s provides health checks - to keep an eye on the pod liveness and readiness, k8s probes it on a configurable time interval and according to the returned HTTP status, it will make a decision if to pass traffic to the pod or not, and weather it should be restarted.
 
 > Any code greater than or equal to 200 and less than 400 indicates success. Any other code indicates failure.
 
@@ -42,7 +42,7 @@ BUT if all routes are locked, although the server is up and running, the probes 
 10.130.92.253 - probe [19/Feb/2020:09:06:07 +0200] "GET / HTTP/1.1" 401 381 "-" "kube-probe/1.14+"
 10.130.92.253 - probe [19/Feb/2020:09:06:12 +0200] "GET / HTTP/1.1" 401 381 "-" "kube-probe/1.14+"
 ```
-and eventually the pod will enter a `CruchLoopBackOff` mode, for the reason:
+and eventually the pod will enter a `CrushLoopBackOff` mode, for the reason:
 
 ```bash 
 ~ $ kubectl describe po <httpd-pod>
@@ -66,7 +66,7 @@ the probe user had been added to the file. commit and push the changes to the pr
 
 ## Adding the Authorization header
 
-in my case, I was desiging a helm chart for a few legacy PHP apps, and wanted to enable liveness and readiness probes. In the chart `values.yaml` file I included:
+in my case, I was designing a helm chart for a few legacy PHP apps, and wanted to enable liveness and readiness probes. In the chart `values.yaml` file I included:
 
 ```yaml
 ...
@@ -98,7 +98,7 @@ and the `templates/deployment.yaml` had:
           {{- end }}
 ```
 
-after templating, it is going to look like:
+after rendering, it is going to look like:
 
 
 ```yaml

@@ -43,7 +43,7 @@ with bitnami's SealedSecret controller, you will be able to encrypt your secrets
 
 - complicates the process of creating secrets
 - currently doesn't support external keys management integration (e.g. KMS).
-- Potential secret loss (like when a key configMap is accidentlly deleted)
+- Potential secret loss (like when a key configMap is accidentally deleted)
 
 ## 3. GoDaddy **[External Secrets](https://github.com/godaddy/kubernetes-external-secrets)**
 
@@ -74,12 +74,12 @@ once such an ExternalSecret is deployed, the ExternalSecrets controller will be 
 ### Pros:
 
 - A variety of backends integrations 
-- offers a sync cycle - the backend is being polled at a configurable time interval to search for new changes and apply them to the existing secrets on kubrnetes
+- offers a sync cycle - the backend is being polled at a configurable time interval to search for new changes and apply them to the existing secrets on kubernetes
 - single source if truth - you can have multiple ExternalSecrets deployed to different namespaces, and referring to the same single secret on the backend. No more cross-namespace secrets editing yay
 
 ### Cons
 
-- efficient only if you already use AWS or Azure, otherwise the pain of user mamagement doesn't pay off
+- efficient only if you already use AWS or Azure, otherwise the pain of user management doesn't pay off
 - Pricing - external service as has its own costs you should consider.
 
 Right now I use ExternalSecrets and am very happy with the choice. I believe you should try all of this solutions and see what best suits you. 
