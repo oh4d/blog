@@ -171,7 +171,7 @@ I actually copied lots of staff from [this repo](https://github.com/mrlesmithjr/
 
 All you have to do is to adjust the scripts to your own needs.
 
-mine is [here](githubansible), you can `git clone` it and than run it with `ansible-playbook -i hosts intallation.yaml`
+mine is [here](https://github.com/Efrat19/local-k8s-cluster), you can `git clone` it and than run it with `cd ansible && ansible-playbook -i hosts intallation.yaml`
 
 ## 5. Init the master:
 
