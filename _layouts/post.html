@@ -75,9 +75,20 @@
             {% endif %}           
 
            <!--  include disqus.html %} --> 
-            <!--   twitter https://twitter.com/EfratLevitan maxwidth=500 limit=5 %} -->
+           <!--  twitter https://twitter.com/{{ site.author.twitter }} maxwidth=500 limit=5 %}  -->
+           <div class="row">
+           <div class="large-2 columns">
+              <a href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw" 
+              class="twitter-mention-button" data-size="large" data-text="@{{ site.author.twitter }} I loved your post about {{ page.title }}" 
+              data-show-count="false"></a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>          </div>
 
-          </div>
+              <a href="https://twitter.com/{{ site.author.twitter }}?ref_src=twsrc%5Etfw" 
+              class="twitter-follow-button" data-size="large" data-show-screen-name="false" 
+              data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+           </div>
+           </div>
+
         </div>
 
         <!-- large 4 -->
@@ -93,7 +104,7 @@
       <!-- row -->
 
     </section>
-    <!-- section -->
+    <!-- section --> 
 
   </div>
 </div>
