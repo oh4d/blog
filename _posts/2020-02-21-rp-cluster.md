@@ -8,9 +8,9 @@ categories:
     - kubeadm
     - RaspberryPI
     - Ubuntu
-tags:
-    - hoge
-    - foo
+# tags:
+#     - hoge
+#     - foo
 ---
 
 In this post I will document the steps for running my self-hosted kubernetes cluster.

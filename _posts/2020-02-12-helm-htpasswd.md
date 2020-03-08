@@ -7,9 +7,9 @@ categories:
     - helm
     - httpd
     - kube-probe
-tags:
-    - hoge
-    - foo
+# tags:
+#     - hoge
+#     - foo
 ---
  
 
