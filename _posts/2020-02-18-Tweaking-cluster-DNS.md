@@ -40,7 +40,7 @@ spec:
 once this file had been kubectl-applied, every DNS request for `face-mysql` in that namespace, will return a CNAME record answer, with the value `face-db.bis650gy3b0g.us-east-2.rds.amazonaws.com`:
 
 
-```bash
+```console
 ~ $ nslookup face-mysql
 Server:         172.20.0.10 
 Address:        172.20.0.10#53

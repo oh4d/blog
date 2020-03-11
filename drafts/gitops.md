@@ -28,7 +28,7 @@ Install flux chart, be sure to give it your own git-url:
 And the helm-operator:
 `helm upgrade -i helm-operator fluxcd/helm-operator --set git.ssh.secretName=flux-git-deploy --namespace flux`
 
-```bash
+```console
 ~ $ kubectl get po -n flux
 NAME                              READY   STATUS    RESTARTS   AGE
 flux-6b578c8cd-p696h              1/1     Running   0          4m32s

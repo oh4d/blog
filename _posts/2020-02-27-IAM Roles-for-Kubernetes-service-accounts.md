@@ -44,7 +44,7 @@ took it from [this](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitori
 ## Creating the role and the trust relationship:
 
 > **A note about the OIDC protocol:** OIDC or OpenID Connect, is a protocol that extends the existing OAuth 2.0 protocol. The OIDC flow starts with a user requesting a JSON Web Token from an identity provider that contains an appropriately scoped list of attributes about the user. The contents includes attributes such as an email address or name, a header containing extra information about the token itself, e.g. the signature algorithm, and finally the signature of the token that has been signed by the identity provider. This signature is used by the resource server to verify the the token contents using the Certificate Authority presented by the identity provider.
-```bash
+```console
 ~ $ aws eks describe-cluster --name $CLUSTER --query cluster.identity.oidc | jq
 {
   "issuer": "https://oidc.eks.eu-west-1.amazonaws.com/id/THIS-IS-THE-OIDC-TOKEN"

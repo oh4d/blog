@@ -34,7 +34,7 @@ OTOH k8s provides health checks - to keep an eye on the pod liveness and readine
 
 BUT if all routes are locked, although the server is up and running, the probes will fail with 401:
 
-```bash
+```console
 ~ $ kubectl logs <httpd-pod>
 10.130.92.253 - probe [19/Feb/2020:09:05:52 +0200] "GET / HTTP/1.1" 401 381 "-" "kube-probe/1.14+"
 10.130.92.253 - probe [19/Feb/2020:09:05:57 +0200] "GET / HTTP/1.1" 401 381 "-" "kube-probe/1.14+"
@@ -124,7 +124,7 @@ after rendering, it is going to look like:
 
 After `helm install`ing this chart, the probe will succeed:
 
-```bash
+```console
 ~ $ kubectl logs <httpd-pod>
 10.130.92.253 - probe [18/Feb/2020:23:38:29 +0200] "GET / HTTP/1.1" 200 16955 "-" "kube-probe/1.14+"
 10.130.92.253 - probe [18/Feb/2020:23:38:33 +0200] "GET / HTTP/1.1" 200 16955 "-" "kube-probe/1.14+"
