@@ -1,0 +1,1 @@
+helm install --namespace influx stable/influxdb --name influx --set persistence.enabled=false 
