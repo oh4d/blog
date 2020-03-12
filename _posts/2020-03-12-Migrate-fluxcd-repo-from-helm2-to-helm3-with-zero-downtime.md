@@ -105,7 +105,7 @@ existing resource conflict:
 kind: PersistentVolumeClaim, namespace: example, name: example-efs-pvc"
 ```
 #### Don't Panic Yet!
-this error message tell us about **resources conflicts**. This is happening because **By default, Flux operator does not delete resources**. It is creating & updating resources but deletions must be done manually. So flux is now trying to deploy your helm3 new release resources but bumps into the helm2 old release pieces. So once you see those errors you now you can safely delete the helm2 release:
+this error message tell us about **resources conflicts**. This is happening because **By default, Flux operator does not delete resources**. It is creating & updating resources but deletions must be done manually. So flux is now trying to deploy your helm3 new release resources but bumps into the helm2 old release pieces. So once you see those errors you know you can safely delete the helm2 release:
 
 ```console
 helm delete --purge example
