@@ -44,7 +44,7 @@ If you choose not to migrate to helm3, you can still run this script every now a
 ## How Helm3 solves this bug once and for all
 #### (the proper solution)
 
-The main difference between helm2 and helm3 is that **helm3 is tillerless** - helm operations goes directly to kubernetes api-server, Which is much more efficient. As a result, thank god, :star-struck: helm3 doesn't throw a huge number of configMaps to tiller namespace (because there is not tiller)
+The main difference between helm2 and helm3 is that **helm3 is tillerless** - helm operations goes directly to kubernetes api-server, Which is much more efficient. As a result, thank god, :smiley: helm3 doesn't throw a huge number of configMaps to tiller namespace (because there is not tiller)
 
 ## helm 2to3 plugin
 
