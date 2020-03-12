@@ -153,6 +153,6 @@ NAME            NAMESPACE       REVISION        UPDATED                         
 example         example         1               2020-03-12 09:02:21.66010842 +0000 UTC  deployed        example-0.1.0   1.0        
 ```
 
-Gently roll this update across your cluster. If you are careful and patient, You will not experience any downtime (The helm2 release pods will tarminate and the helm3 release pods will start on the same time).
+Gently roll this update across your cluster. If you are careful and patient, You will not experience any downtime (The helm2 release pods will terminate and the helm3 release pods will start on the same time).
 
 ## Happy Helm3ing!
