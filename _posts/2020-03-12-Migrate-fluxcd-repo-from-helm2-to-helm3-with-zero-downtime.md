@@ -24,32 +24,9 @@ In my company we use fluxcd gitops operator to manage our kubernetes clusters. W
 1. Fork [flux repo](https://github.com/fluxcd/flux-get-started) and rename it. 
 For example, my fork is [https://github.com/Efrat19/local-cluster](https://github.com/Efrat19/local-cluster).
 
-2. Add the charts repo:
-   ```console 
-~ $ helm repo add fluxcd https://charts.fluxcd.io
-```
+2. Follow the official [installation steps](https://github.com/fluxcd/helm-operator-get-started). Those will help you get started with flux + the flux helm-operator, allowing you to gitopsly manage your workloads & helm charts.
 
-3. Add the CRD: 
-```console 
-~ $ kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/flux-helm-release-crd.yaml
-```
-
-4. Create a namespace:
-```console 
-~ $ kubectl create namespace flux
-```
-
-5. Install flux chart, be sure to give it your own git-url:
-```console 
-~ $ helm upgrade -i flux fluxcd/flux --set git.url=git@github.com:Efrat19/local-cluster.git --namespace flux
-```
-
-6. Install the helm-operator:
-```console 
-~ $ helm upgrade -i helm-operator fluxcd/helm-operator --set git.ssh.secretName=flux-git-deploy --namespace flux
-```
-
-7. test:
+1. test:
 ```console
 ~ $ kubectl get po -n flux
 NAME                              READY   STATUS    RESTARTS   AGE
@@ -134,7 +111,8 @@ this error message tell us about **resources conflicts**. This is happening beca
 helm delete --purge example
 ```
 
-Congrats! You have cleared the way for the new helm3 release, and now the logs will show:
+#### Congrats!
+You have cleared the way for the new helm3 release, and now the logs will show:
 ```conosle
 ts=2020-03-12T09:02:22.244932236Z caller=helm.go:69
 component=helm version=v3 info="creating 7 resource(s)"
@@ -145,7 +123,7 @@ resource=example:helmrelease/example helmVersion=v3
 info="Helm release sync succeeded" revision=d058e851afb648eddd4d5ec29be0c163d16d0c85
 ```
 
-From now on, your release can be viewed using `helm3`. (In [this](/blog/kubernetes/helm/2020/03/11/the-server-was-unable-to-return-a-response-in-the-time-allotted,-but-may-still-be-processing-the-request-(get-configmaps)-OR-Why-Its-Time-to-Move-to-Helm3.html) post I cover helm3 client installation steps):
+From now on, your release can be viewed using `helm3`. ([In this post I cover helm3 client installation steps](/blog/kubernetes/helm/2020/03/11/the-server-was-unable-to-return-a-response-in-the-time-allotted,-but-may-still-be-processing-the-request-(get-configmaps)-OR-Why-Its-Time-to-Move-to-Helm3.html)):
 
 ```console
 ~ $ helm3 ls
