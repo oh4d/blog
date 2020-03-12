@@ -13,7 +13,7 @@ categories:
 ---
 {% include smooth-scroll.html %}
 
-In my company we use fluxcd gitops operaor to manage our kubernetes clusters. We also use flux official helm-operator, to deploy our helm charts. the helm-operator was originally designed for helm2 charts, but once helm V3 was out, fluxcd team did a great work on the helm-operator, and now it is is compatible with both helm2 and helm3 charts. In this post I will cover the steps I took to complete my charts migration.
+In my company we use fluxcd gitops operator to manage our kubernetes clusters. We also use flux official helm-operator, to deploy our helm charts. the helm-operator was originally designed for helm2 charts, but once helm V3 was out, fluxcd team did a great work on the helm-operator, and now it is is compatible with both helm2 and helm3 charts. In this post I will cover the steps I took to complete my charts migration.
 
 ## What is Flux and how to get started
 
@@ -60,7 +60,7 @@ helm-operator-66d5477cb7-xwgzh    1/1     Running   0          4m1s
 
 ## Why I couldn't use helm 2to3 plugin
 
-the helm team created a plugin which is supposed to help you migrate your released from helm2 to helm3. If you are using fluxcd to manage your cluster, this tool is helpless because your changes will conflict with the chart source, and overwritten by the flux operator on the next sync cycle. :cry:
+the helm team created a plugin which is supposed to help you migrate your released from helm2 to helm3. **BUT** if you are using fluxcd to manage your cluster, this tool is helpless because your changes will conflict with the chart source, and overwritten by the flux operator on the next sync cycle. :cry:
 
 ## <a id="move">Upgrading Steps:</a>
 
