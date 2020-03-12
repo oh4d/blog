@@ -37,7 +37,9 @@ The heavy load on the api-server might slow other operations. In severe cases, y
 Since its a [well-known issue](https://github.com/helm/helm/issues/2332), somebody wrote a [script](https://github.com/helm/helm/issues/2332#issuecomment-336565784) to manually delete old config maps.
 If you choose not to migrate to helm3, you can still run this script every now and than (like I did it before figuring out how to migrate my charts) you can also keep around a grafana dashboard to monitor the configMaps scale, and it will alert you once its going crazy:
 
-<!-- dashboard image -->
+`sum(kube_configmap_info{namespace="tiller"})`
+
+<img src="{{"/assets/img/cm-panel.png" | relative_url }}">
 
 ## How Helm3 solves this bug once and for all
 #### (the proper solution)
@@ -47,13 +49,52 @@ The main difference between helm2 and helm3 is that **helm3 is tillerless** - he
 ## helm 2to3 plugin
 
 the helm team created a [plugin](https://github.com/helm/helm-2to3) which is supposed to help you migrate your released from helm2 to helm3. 
+View my example - I migrate my `influx` helm chart from helm2 to helm3:
+
 ```console
-$ helm plugin install https://github.com/helm/helm-2to3.git
+~ $ helm plugin install https://github.com/helm/helm-2to3.git
 Downloading and installing helm-2to3 v0.4.1 ...
 https://github.com/helm/helm-2to3/releases/download/v0.4.1/helm-2to3_0.4.1_darwin_amd64.tar.gz
 Installed plugin: 2to3
+
+~ $ helm 2to3 move config
+2020/03/12 21:25:32 WARNING: Helm v3 configuration may be overwritten during this operation.
+2020/03/12 21:25:32 
+[Move Config/confirm] Are you sure you want to move the v2 configuration? [y/N]: y
+2020/03/12 21:25:56 
+Helm v2 configuration will be moved to Helm v3 configuration.
+2020/03/12 21:25:56 [Helm 2] Home directory: /Users/efrat/.helm
+2020/03/12 21:25:56 [Helm 3] Config directory: /Users/efrat/Library/Preferences/helm
+2020/03/12 21:25:56 [Helm 3] Data directory: /Users/efrat/Library/helm
+2020/03/12 21:25:56 [Helm 3] Cache directory: /Users/efrat/Library/Caches/helm
+2020/03/12 21:25:56 [Helm 3] Create config folder "/Users/efrat/Library/Preferences/helm" .
+2020/03/12 21:25:56 [Helm 3] Config folder "/Users/efrat/Library/Preferences/helm" created.
+2020/03/12 21:25:56 [Helm 2] repositories file "/Users/efrat/.helm/repository/repositories.yaml" will copy to [Helm 3] config folder "/Users/efrat/Library/Preferences/helm/repositories.yaml" .
+2020/03/12 21:25:56 [Helm 2] repositories file "/Users/efrat/.helm/repository/repositories.yaml" copied successfully to [Helm 3] config folder "/Users/efrat/Library/Preferences/helm/repositories.yaml" .
+2020/03/12 21:25:56 [Helm 3] Create cache folder "/Users/efrat/Library/Caches/helm" .
+2020/03/12 21:25:56 [Helm 3] cache folder "/Users/efrat/Library/Caches/helm" created.
+2020/03/12 21:25:56 [Helm 3] Create data folder "/Users/efrat/Library/helm" .
+2020/03/12 21:25:56 [Helm 3] data folder "/Users/efrat/Library/helm" created.
+2020/03/12 21:25:56 [Helm 2] plugins "/Users/efrat/.helm/cache/plugins" will copy to [Helm 3] cache folder "/Users/efrat/Library/Caches/helm/plugins" .
+2020/03/12 21:25:56 [Helm 2] plugins "/Users/efrat/.helm/cache/plugins" copied successfully to [Helm 3] cache folder "/Users/efrat/Library/Caches/helm/plugins" .
+2020/03/12 21:25:56 [Helm 2] plugin symbolic links "/Users/efrat/.helm/plugins" will copy to [Helm 3] data folder "/Users/efrat/Library/helm" .
+2020/03/12 21:25:56 [Helm 2] plugin links "/Users/efrat/.helm/plugins" copied successfully to [Helm 3] data folder "/Users/efrat/Library/helm" .
+2020/03/12 21:25:56 [Helm 2] starters "/Users/efrat/.helm/starters" will copy to [Helm 3] data folder "/Users/efrat/Library/helm/starters" .
+2020/03/12 21:25:56 [Helm 2] starters "/Users/efrat/.helm/starters" copied successfully to [Helm 3] data folder "/Users/efrat/Library/helm/starters" .
+2020/03/12 21:25:56 Helm v2 configuration was moved successfully to Helm v3 configuration.
+
+~ $ helm 2to3 convert influx
+2020/03/12 21:27:56 Release "influx" will be converted from Helm v2 to Helm v3.
+2020/03/12 21:27:56 [Helm 3] Release "influx" will be created.
+2020/03/12 21:27:57 [Helm 3] ReleaseVersion "influx.v1" will be created.
+2020/03/12 21:27:57 [Helm 3] ReleaseVersion "influx.v1" created.
+2020/03/12 21:27:57 [Helm 3] Release "influx" created.
+2020/03/12 21:27:57 Release "influx" was converted successfully from Helm v2 to Helm v3.
+2020/03/12 21:27:57 Note: The v2 release information still remains and should be removed to avoid conflicts with the migrated v3 release.
+2020/03/12 21:27:57 v2 release information should only be removed using `helm 2to3` cleanup and when all releases have been migrated over.
 ```
-My cluster is configured differently so I didn't try it myself, but it seems simple, just follow the [instructions](https://github.com/helm/helm-2to3#usage) and you should be good :smiling_imp: (I don't really care if not)
+
+> :warning: Once you are done, you are can run `helm 2to3 cleanup`. **This command will delete all helm2 resources, including tiller**, so once you run it - helm2 charts won't work on your cluster any more. Right now not all charts are still helm3 compatible, therefore I recommend keeping tiller around, just in case, So I prefer to manually run `helm delete --purge release-name` to get read of the release+configmaps.
 
 ## Installing helm3 client
 
