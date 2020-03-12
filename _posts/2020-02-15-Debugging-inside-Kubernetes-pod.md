@@ -11,6 +11,10 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+image:
+ path: assets/img/default.jpg
+ width: 1200
+ height: 630
 ---
 
 Containers where designed to isolate an application, so it can get a consistent environment and you can run it anywhere and expect same results.

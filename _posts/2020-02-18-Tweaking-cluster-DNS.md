@@ -9,6 +9,10 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+image:
+ path: assets/img/default.jpg
+ width: 1200
+ height: 630
 ---
 
 I use Kubernetes external names and endpoints for custom DNS mapping over the cluster. the most important lesson I learned from the work that was done here is to look for the simple stuff. k8s got build in solutions for so many things, all you have to do is learn how it works.

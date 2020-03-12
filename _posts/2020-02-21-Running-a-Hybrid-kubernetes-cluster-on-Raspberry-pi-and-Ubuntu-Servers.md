@@ -11,6 +11,10 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+image:
+ path: assets/img/default.jpg
+ width: 1200
+ height: 630
 ---
 
 In this post I will document the steps for running my self-hosted kubernetes cluster.

@@ -8,7 +8,12 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+image:
+ path: assets/img/default.jpg
+ width: 1200
+ height: 630
 ---
+
 
 ## The issue with helm2 
 

@@ -12,6 +12,10 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+image:
+ path: assets/img/default.jpg
+ width: 1200
+ height: 630
 ---
 
 On this post I will show you how to give IAM permissions to a k8s service account, right from the CLI with a few simple commands. As an example, we will create Fluentd and Cloud-watch DaemonSets which will collect logs across the cluster and stream them to AWS CloudWatch logs panel. The service-accounts will be granted k8s RBAC permissions, but we will also create for them an IAM role, and link it via k8s annotation.
