@@ -13,7 +13,7 @@ categories:
 #     - hoge
 #     - foo
 image:
- path: assets/img/default.jpg
+ path: /assets/img/default.jpg
  width: 1200
  height: 630
 ---
