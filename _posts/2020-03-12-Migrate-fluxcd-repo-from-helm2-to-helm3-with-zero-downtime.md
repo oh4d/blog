@@ -45,7 +45,7 @@ the helm team created a plugin which is supposed to help you migrate your releas
 
 ## <a id="move">Upgrading Steps:</a>
 
-### step 1: switch to multiversioned helm-operator
+### Step 1: switch to multiversioned helm-operator
 
 Figure out in which namespace your flux helm-operator is running, and its version:
 ```console
@@ -82,17 +82,19 @@ extraEnvs:
 As you can see in helm-operator [source code](https://github.com/fluxcd/helm-operator/blob/9951e409d5f8e14eee0139194b85290f42939247/cmd/helm-operator/main.go#L213-L234), once the change is done, both v2 and v3 helm versions will be respected.
 
 
-### step 2: Bump the Chart API Version
+### Step 2: Update the repo: 
+
+**Bump the Chart API Version:**
 
 When using fluxcd, your cluster content is version-controller in a dedicated git repository, and you keep your charts under the  `/charts` path. cd into `charts/example`. In the `Chart.yaml` file, change `apiVersion` from `v1` to `v2`.
 
 > (Theres are a lot more differences between the versions, which you can view if you run `helm create helm2-chart` and `helm3 create helm3-chart` and compare the generated directories. In this post I only cover the minimal changes needed to get this done, for my super busy readers :fire:) 
 
-### step 3: Bump the HelmRelease Helm version:
+**Bump the HelmRelease Helm version:**
 
 go to your helm release (`/releases/example.yaml` in the repo). Set the `spec.helmVersion` to `v3`. (the default value is `v2`).
 
-### Make the swap
+### Step 3: Make the swap
 
 commit and push the changes. Meanwhile watch the helm-operator pod logs. you will see something like:
 
