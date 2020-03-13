@@ -13,15 +13,15 @@ permalink: /categories/
         {% for post in site.categories[category_name] %}
         <!-- <div class="article"> -->
             <li>
-                <a class="clearlink" href="{{ post.url | relative_url }}">
+                <a class="clearlink" href="{{ site.baseurl | prepend: site.url }}/{{ post.title | split: ' ' | join: '-' }}">
                     <b>{{ post.title }}</b>
                 </a>
                 <div class="read-more clearfix">
                     <div class="more-left left">
                         <span class="date"><time>{{ post.date | date: '%B %d, %Y' }}</time></span>
-                        <span>tags:&nbsp;</span> 
+                        <!-- <span>tags:&nbsp;</span> 
                         <span class="posted-in"><a href='numerical.html'>{{ post.tags }}</a>
-                        </span>
+                        </span> -->
                     </div>
                 </div>
             </li>
