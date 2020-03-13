@@ -14,7 +14,7 @@ categories:
 #     - foo
 permalink: /:title
 image:
- path: /assets/img/default.jpg
+ path: /assets/img/meta.png
  width: 1200
  height: 630
 ---
