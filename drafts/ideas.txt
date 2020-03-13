@@ -20,10 +20,8 @@ k8s:
 - rabbitmq exporter
 - federation
 - vim plugins
-- externlaDNs
 - hpa custom metrics
 - efs
-- helm 2 to 3
 - mongodb import-export
 
 
@@ -37,3 +35,11 @@ RUN apk add mongodb-tools
 
 
 mongoimport --db admin --authenticationDatabase admin --username master --password abcd1234? --file /mongo/yad2_lead_fields.json --collection admin --host y2-dev-incubator2.cbjyhy8qtvcd.eu-west-1.docdb.amazonaws.com:27017  --ssl --sslCAFile rds-combined-ca-bundle.pem --sslAllowInvalidCertificates
+
+
+
+kubernetes echosystem
+- kube-wireshark
+- externaksecrets
+- externalDNS
+- kubejanitor

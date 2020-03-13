@@ -11,6 +11,7 @@ categories:
 # tags:
 #     - hoge
 #     - foo
+permalink: /:title
 image:
  path: /assets/img/default.jpg
  width: 1200
