@@ -9,7 +9,7 @@ categories:
 # tags:
 #     - hoge
 #     - foo
-permalink: /:title
+permalink: /:slug
 image:
  path: /assets/img/meta.png
  width: 1200

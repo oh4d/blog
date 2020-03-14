@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Migrate fluxcd repo from helm2 to helm3 with zero downtime
+# slug: cvbnjklbjm,.
 lang: en
 categories:
     - Kubernetes
@@ -10,7 +11,7 @@ categories:
 # tags:
 #     - hoge
 #     - foo
-permalink: /:title
+permalink: /:slug 
 image:
  path: /assets/img/meta.png
  width: 1200
