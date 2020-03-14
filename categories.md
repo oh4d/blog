@@ -13,7 +13,7 @@ permalink: /categories/
         {% for post in site.categories[category_name] %}
         <!-- <div class="article"> -->
             <li>
-                <a class="clearlink" href="{{ site.baseurl | prepend: site.url }}/{{ post.title | split: ' ' | join: '-' | downcase }}">
+                <a class="clearlink" href="{{ site.baseurl | prepend: site.url }}/{{ post.title | slugify }}">
                     <b>{{ post.title }}</b>
                 </a>
                 <div class="read-more clearfix">
