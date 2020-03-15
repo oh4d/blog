@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Migrate fluxcd repo from helm2 to helm3 with zero downtime
+title: Migrate fluxcd repo from helm2 to helm3 with (almost) zero downtime
 # slug: cvbnjklbjm,.
 lang: en
 categories:
