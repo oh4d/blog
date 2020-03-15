@@ -41,7 +41,7 @@ a {
 
 a:focus,
 a:hover {
-    color: #0085a1
+    color: #326CE5
 }
 
 a img:focus,
@@ -73,13 +73,13 @@ blockquote {
 
 ::-moz-selection {
     color: #fff;
-    background: #0085a1;
+    background: #326CE5;
     text-shadow: none
 }
 
 ::selection {
     color: #fff;
-    background: #0085a1;
+    background: #326CE5;
     text-shadow: none
 }
 
@@ -94,7 +94,7 @@ img::-moz-selection {
 }
 
 body {
-    -webkit-tap-highlight-color: #0085a1
+    -webkit-tap-highlight-color: #326CE5
 }
 
 #mainNav {
@@ -173,14 +173,14 @@ body {
     }
     #mainNav.is-fixed .navbar-brand:focus,
     #mainNav.is-fixed .navbar-brand:hover {
-        color: #0085a1
+        color: #326CE5
     }
     #mainNav.is-fixed .navbar-nav>li.nav-item>a {
         color: #333
     }
     #mainNav.is-fixed .navbar-nav>li.nav-item>a:focus,
     #mainNav.is-fixed .navbar-nav>li.nav-item>a:hover {
-        color: #0085a1
+        color: #326CE5
     }
     #mainNav.is-visible {
         -webkit-transform: translate3d(0, 100%, 0);
@@ -289,7 +289,7 @@ header.masthead .post-heading .meta a {
 .post-preview>a:focus,
 .post-preview>a:hover {
     text-decoration: none;
-    color: #0085a1
+    color: #326CE5
 }
 
 .post-preview>a>.post-title {
@@ -319,7 +319,7 @@ header.masthead .post-heading .meta a {
 .post-preview>.post-meta>a:focus,
 .post-preview>.post-meta>a:hover {
     text-decoration: underline;
-    color: #0085a1
+    color: #326CE5
 }
 
 @media only screen and (min-width:768px) {
@@ -383,7 +383,7 @@ header.masthead .post-heading .meta a {
 }
 
 .floating-label-form-group-with-focus label {
-    color: #0085a1
+    color: #326CE5
 }
 
 form .form-group:first-child .floating-label-form-group {
@@ -417,8 +417,8 @@ footer .copyright {
 
 .btn-primary {
     color: #fff;
-    border-color: #0085a1;
-    background-color: #0085a1
+    border-color: #326CE5;
+    background-color: #326CE5
 }
 
 .btn-primary.focus,
@@ -471,12 +471,12 @@ footer .copyright {
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary:hover {
-    border-color: #0085a1;
-    background-color: #0085a1
+    border-color: #326CE5;
+    background-color: #326CE5
 }
 
 .btn-primary .badge {
-    color: #0085a1;
+    color: #326CE5;
     background-color: #fff
 }
 
@@ -488,6 +488,6 @@ fieldset[disabled] .btn-primary:hover {
 .btn-default:focus,
 .btn-default:hover {
     color: #fff;
-    border: 1px solid #0085a1;
-    background-color: #0085a1
+    border: 1px solid #326CE5;
+    background-color: #326CE5
 }

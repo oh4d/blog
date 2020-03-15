@@ -1,6 +1,7 @@
 ---
 layout: post
 title: the server was unable to return a response in the time allotted, but may still be processing the request (get configmaps) / OR Why Its Time to Move to Helm3
+description: how to solve helm error the server was unable to return a response in the time allotted, but may still be processing the request (get configmaps)
 lang: en
 categories:
     - Kubernetes
