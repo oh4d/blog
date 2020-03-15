@@ -12,7 +12,7 @@ categories:
 #     - foo
 permalink: /:slug
 image:
- path: //assets/img/meta.png
+ path: ///assets/designer/meta.png
  width: 1200
  height: 630
 ---
