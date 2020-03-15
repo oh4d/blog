@@ -10,7 +10,7 @@ categories:
 #     - foo
 permalink: /:slug
 image:
- path: ///assets/designer/meta.png
+ path: ///assets/designer/tinified_meta.png
  width: 1200
  height: 630
 ---
