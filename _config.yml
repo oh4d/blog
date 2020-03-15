@@ -3,6 +3,7 @@ description: >
   Efrat Levitan's Blog site 
 baseurl: "/blog"
 url: "http://efrat19.github.io"
+google_analytics: UA-160733621-1
 
 author:
   name: Efrat Levitan
